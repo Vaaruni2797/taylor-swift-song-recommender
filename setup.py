@@ -18,7 +18,7 @@ def get_requirements(file_path:str)->List[str]:
 
 
 setup(
-   name = 'mlproject',
+   name = 'taylor-swift-song-recommender',
    version = '0.0.1',
    author = 'Vaaruni',
    author_email = 'vaaruni.desai@gmail.com',
