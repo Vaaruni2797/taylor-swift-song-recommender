@@ -5,4 +5,4 @@ pandas
 scikit-learn
 requests
 spotipy
-#-e .
+-e .

@@ -6,8 +6,8 @@ from src.pipeline.recommend_pipeline import RecommendPipeline  # Ensure correct 
 
 # Set up Spotify API credentials
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(
-    client_id="",
-    client_secret=""
+    client_id = st.secrets["client_id"],
+    client_secret=st.secrets["client_secret"]
 ))
 
 @st.cache_data
