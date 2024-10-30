@@ -7,7 +7,7 @@ import nltk_download
 
 # Set up Spotify API credentials
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(
-    client_id = st.secrets["client_id"],
+    client_id=st.secrets["client_id"],
     client_secret=st.secrets["client_secret"]
 ))
 
@@ -38,7 +38,7 @@ st.markdown(
             background-color: black;  /* This affects the app's main area */
         }
         /* Text colors */
-        h1, h2, h3, p {
+        h1, h2, h3, p{
             color: white;  /* Title and text color */
         }
         .custom-song-box {
@@ -52,23 +52,11 @@ st.markdown(
             border-radius: 8px;  /* Match the border-radius of the outer box */
             padding: 15px;  /* Padding inside the box */
         }
-        .custom-song-content img {
-            border-radius: 5px;  /* Optional: round corners for the album art */
-        }
-        .custom-button {
-            background-color: white;
-            color: black;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            margin-top: 10px;
-        }
-        .custom-button:hover {
-            background-color: #e0e0e0;  /* Darker background on hover */
+        div.stButton > button:first-child {
+            border-color: #ffffff;
+            box-shadow: none;
+            color: #ffffff;
+            background-color: #000000;
         }
     </style>
     """,
@@ -109,8 +97,9 @@ if selected_song:
     else:
         st.write("Song data not found in the dataset.")
 
-# Custom HTML button to get recommendations
-if st.markdown('<button class="custom-button" onclick="getRecommendations()">Get Recommendations</button>', unsafe_allow_html=True):
+# Custom button to get recommendations
+if st.button("Get Recommendations", key="recommend_button"):
+    # Use this section to call the recommendation logic
     recommendations = recommend_pipeline.recommend(song_name=selected_song)
     st.write("Recommended Songs:")
 
