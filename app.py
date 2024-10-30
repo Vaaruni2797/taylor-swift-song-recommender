@@ -3,6 +3,7 @@ import pandas as pd
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from src.pipeline.recommend_pipeline import RecommendPipeline  # Ensure correct import
+import nltk_download
 
 # Set up Spotify API credentials
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(

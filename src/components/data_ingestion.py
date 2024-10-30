@@ -2,7 +2,7 @@ import os
 import sys
 import pandas as pd
 from dataclasses import dataclass
-print(os.getcwd())
+
 from src.components.data_transformation import DataTransformation
 from src.components.recommender import Recommender
 from src.components.recommender import RecommenderConfig
